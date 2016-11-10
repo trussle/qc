@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+const cwd = require("process").cwd()
+const package = require(`${cwd}/package.json`)
+console.log(package.scripts.test)

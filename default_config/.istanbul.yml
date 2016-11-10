@@ -1,0 +1,6 @@
+reporting:
+    print: detail
+check:
+    each:
+        functions: 100 # All functions should be tested; no exceptions.
+        branches: 80 # Some branches are difficult to get to in testing.

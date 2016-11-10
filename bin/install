@@ -1,0 +1,27 @@
+#!/bin/bash
+QC_BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $QC_BIN_DIR/output
+
+header "Installation"
+PACKAGE_ROOT=$(cd .. && npm prefix)
+QC=.
+
+log "Copying default configs to root (don't overwrite)"
+for filename in $(find $QC/default_config -type f)
+do
+  cp -n $filename $PACKAGE_ROOT/$(basename $filename)
+done
+log "Done!"
+
+
+log "Symlinking Git hooks to .git/hooks"
+HOOKS=.git/hooks
+mkdir -p $HOOKS
+for filename in $(find $QC/hooks -type f)
+do
+  ln -s $filename $PACKAGE_ROOT/$HOOKS/$(basename $filename)
+done
+log "Done!"
+
+
+header "Installation Complete!"

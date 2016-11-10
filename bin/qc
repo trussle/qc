@@ -1,0 +1,28 @@
+#!/bin/bash
+QC_BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $QC_BIN_DIR/output
+
+header "Checking package"
+BIN=./node_modules/.bin
+
+# Run the tests with Istanbul.
+#
+# Note that we have to be a bit clever here:
+# If we just run `npm test` the process will fork
+# and we won't get any coverage. Instead, we sniff
+# the command required and execute it in the Istanbul context.
+# Neat, huh?
+log "Testing..."
+$BIN/istanbul cover $($QC_BIN_DIR/npm_test_command) || fail
+log "Testing complete!"
+
+log "Checking coverage..."
+$BIN/istanbul check-coverage || fail
+log "Coverage check OK!"
+
+# Run the linter...
+log "Linting..."
+$BIN/eslint . || fail
+log "Linting complete!"
+
+header "Package check passed!"

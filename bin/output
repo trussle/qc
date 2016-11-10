@@ -1,0 +1,15 @@
+#!/bin/bash
+# Some handy helpers to skin our sexy CLI.
+
+function header {
+  echo -e "\x1B[42m\x1B[30m⬟ Trussle QC:\x1B[21m $1 ⬟ \x1B[0m"
+}
+
+function log {
+  echo -e "\x1B[32m⬟ QC:\x1B[39m $1"
+}
+
+function fail {
+  echo -e "\x1B[41m\x1B[30m⬟ Trussle QC:\x1B[21m Package check failed! ⬟ \x1B[0m"
+  exit
+}

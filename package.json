@@ -1,0 +1,22 @@
+{
+  "name": "@trussle/qc",
+  "version": "1.0.0",
+  "description": "Quality control tool for Trussle",
+  "bin": {
+    "qc": "./bin/qc"
+  },
+  "scripts": {
+    "postinstall": "./bin/install"
+  },
+  "author": "Team Trussle",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trussle/qc.git"
+  },
+  "dependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-trussle": "^2.0.0",
+    "istanbul": "^0.4.5"
+  }
+}
