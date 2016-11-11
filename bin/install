@@ -1,12 +1,14 @@
 #!/bin/bash
-QC_BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source $QC_BIN_DIR/output
+QC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
+source $QC/bin/output
+FAILURE_MESSAGE="Installation failed!"
+
 
 header "Installation"
-PACKAGE_ROOT=$(cd .. && npm prefix)
-QC=.
+
 
 log "Copying default configs to root (don't overwrite)"
+PACKAGE_ROOT=$(cd .. && npm prefix)
 for filename in $(find $QC/default_config -type f)
 do
   cp -n $filename $PACKAGE_ROOT/$(basename $filename)

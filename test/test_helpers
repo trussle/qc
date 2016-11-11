@@ -1,0 +1,23 @@
+#!/bin/bash
+# Test installation and operation modes.
+
+QC="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"/..
+source $QC/bin/output
+FAILURE_MESSAGE="Tests failed!"
+
+function assert {
+  message="$1"
+  shift
+
+  if test "$*"
+  then
+    log "✅  $message"
+  else
+    log "❌  $message"
+    fail
+  fi
+}
+
+function assert_file_exists {
+  assert "$1 exists" -f "$1"
+}

@@ -1,0 +1,24 @@
+#!/bin/bash
+# Test installation and operation modes.
+
+cd $(npm prefix)
+source ./test/test_helpers
+
+header "Running tests"
+
+# Installation...
+PACKAGE_NAME=$(npm pack)
+cd test/sample_project
+rm -r node_modules
+npm install --save-dev ../../$PACKAGE_NAME || fail
+log "✅  Install OK"
+
+assert_file_exists .eslintrc.js
+assert_file_exists .istanbul.yml
+assert_file_exists .git/hooks/pre-push
+
+# Operation
+./node_modules/.bin/qc || fail
+log "✅  QC OK"
+
+header "All tests passed!"

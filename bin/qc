@@ -1,9 +1,10 @@
 #!/bin/bash
-QC_BIN_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source $QC_BIN_DIR/output
+QC=$(npm root)/@trussle/qc
+source $QC/bin/output
+FAILURE_MESSAGE="Package check failed!"
 
 header "Checking package"
-BIN=./node_modules/.bin
+BIN=$(npm bin)
 
 # Run the tests with Istanbul.
 #
@@ -13,7 +14,7 @@ BIN=./node_modules/.bin
 # the command required and execute it in the Istanbul context.
 # Neat, huh?
 log "Testing..."
-$BIN/istanbul cover $($QC_BIN_DIR/npm_test_command) || fail
+$BIN/istanbul cover $($QC/bin/npm_test_command) || fail
 log "Testing complete!"
 
 log "Checking coverage..."

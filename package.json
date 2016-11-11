@@ -6,6 +6,7 @@
     "qc": "./bin/qc"
   },
   "scripts": {
+    "test": "./test/run",
     "postinstall": "./bin/install"
   },
   "author": "Team Trussle",
