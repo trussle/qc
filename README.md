@@ -21,7 +21,7 @@ QC should be installed as a dependency in your project:
 npm install --save-dev @trussle/qc
 ```
 
-**If you're using mocha,** you'll need to change from using `mocha` to using `_mocha`; this avoids forking the process, which causes some issues.
+**If you're using mocha,** you'll need to change from using `mocha` to using `_mocha`; this avoids forking the process, which [causes some issues with code coverage](https://github.com/gotwarlost/istanbul/issues/44).
 
 ## Usage
 
@@ -30,7 +30,7 @@ On installation, QC will do a few things:
 - If there is no `.istanbul.yml` file, one is added to the root of your project.
 - It will set up a [Git pre-push hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) that runs itself when pushing code, to make sure you're behaving 😘
 
-If you want to run QC yourself, run `node_modules/.bin/qc`.
+If you want to run QC yourself, run `./node_modules/.bin/qc`.
 
 ## Configuring
 
