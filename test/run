@@ -21,4 +21,6 @@ assert_file_exists .git/hooks/pre-push
 ./node_modules/.bin/qc || fail
 log "✅  QC OK"
 
+assert_file_exists coverage/coverage.json
+
 header "All tests passed!"

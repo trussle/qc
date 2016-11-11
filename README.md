@@ -6,7 +6,7 @@ QC is a tool that performs quality control checks on a Javascript repository. It
 
 - All tests are passing (by calling `npm test`)
 - All code is lint-free (using [Trussle's ESLint rules](https://github.com/trussle/eslint-config-trussle))
-- Code coverage never goes down (using [Istanbul](https://github.com/gotwarlost/istanbul))
+- Code coverage is sufficient (using [Istanbul](https://github.com/gotwarlost/istanbul))
 
 **If any of these checks don't pass, QC won't let you push your changes.** 
 Mean, I know - but it's the only way you'll learn.
@@ -30,9 +30,12 @@ On installation, QC will do a few things:
 - If there is no `.istanbul.yml` file, one is added to the root of your project.
 - It will set up a [Git pre-push hook](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) that runs itself when pushing code, to make sure you're behaving 😘
 
-If you want to run QC yourself, run `./node_modules/.bin/qc`.
+If you want to run QC yourself, just run `./node_modules/.bin/qc` or set up the following script in your `package.json`:
 
-## Configuring
-
-
-
+```json
+{
+    "scripts": {
+        "qc": "qc"
+    }
+}
+```
