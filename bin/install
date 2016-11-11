@@ -26,4 +26,9 @@ done
 log "Done!"
 
 
+log "Adding 'npm run qc' shortcut"
+$QC/bin/add_qc_script || fail
+log "Done!"
+
+
 header "Installation Complete!"

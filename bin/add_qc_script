@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+const cwd = require("process").cwd();
+const package = require(`${cwd}/package.json`);
+const fs = require('fs');
+
+package.scripts.qc = "qc";
+
+fs.writeFile(`${cwd}/package.json`, JSON.stringify(package, null, 2), (err) => {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  }
+
+  process.exit(0);
+});
