@@ -9,7 +9,7 @@
   "author": "Team Trussle",
   "license": "ISC",
   "devDependencies": {
-    "@trussle/qc": "file:///Users/jonny/trussle/trussle-qc/trussle-qc-1.0.0.tgz",
+    "@trussle/qc": "file:///Users/jonny/trussle/trussle-qc/trussle-qc-1.0.2.tgz",
     "mocha": "^3.1.2"
   }
 }
