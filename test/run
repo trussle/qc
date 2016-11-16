@@ -23,4 +23,9 @@ log "✅  QC OK"
 
 assert_file_exists coverage/coverage.json
 
+# Check lint of files.
+log "Linting JS files in trussle-qc"
+eslint bin/npm_test_command || fail
+log "✅  Lint OK"
+
 header "All tests passed!"
