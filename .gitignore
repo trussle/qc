@@ -2,3 +2,4 @@ trussle-qc-*.tgz
 test/sample_project/.eslintignore
 test/sample_project/.istanbul.yml
 test/sample_project/coverage
+test/sample_project/lib/no-tests.js

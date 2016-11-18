@@ -9,7 +9,7 @@ header "Running tests"
 # Installation...
 PACKAGE_NAME=$(npm pack)
 cd test/sample_project
-rm -rf node_modules
+rm -rf node_modules lib/no-tests.js
 npm install --save-dev ../../$PACKAGE_NAME || fail
 log "✅  Install OK"
 

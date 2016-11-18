@@ -14,7 +14,7 @@ BIN=$(npm bin)
 # the command required and execute it in the Istanbul context.
 # Neat, huh?
 log "Testing..."
-$BIN/istanbul cover $($QC/bin/npm_test_command) || fail
+eval "$BIN/istanbul cover --include-all-sources $($QC/bin/npm_test_command) || fail"
 log "Testing complete!"
 
 log "Checking coverage..."

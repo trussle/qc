@@ -21,3 +21,7 @@ function assert {
 function assert_file_exists {
   assert "$1 exists" test -f $1
 }
+
+function assert_fails {
+  assert "$1" ! $2
+}
