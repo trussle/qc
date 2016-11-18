@@ -4,7 +4,7 @@
   "description": "Sample project for @trussle/qc",
   "main": "lib/index.js",
   "scripts": {
-    "test": "_mocha lib/**/*.spec.js"
+    "test": "_mocha 'lib/**/*.spec.js'"
   },
   "author": "Team Trussle",
   "license": "ISC",

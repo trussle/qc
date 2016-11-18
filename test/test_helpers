@@ -9,7 +9,7 @@ function assert {
   message="$1"
   shift
 
-  if test "$*"
+  if eval $*
   then
     log "✅  $message"
   else
@@ -19,5 +19,5 @@ function assert {
 }
 
 function assert_file_exists {
-  assert "$1 exists" -f "$1"
+  assert "$1 exists" test -f $1
 }

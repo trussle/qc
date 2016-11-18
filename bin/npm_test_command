@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+"use strict"
+
 const cwd = require("process").cwd()
-const package = require(`${cwd}/package.json`)
-console.log(package.scripts.test)
+const pkg = require(`${cwd}/package.json`)
+
+process.stdout.write(pkg.scripts.test)

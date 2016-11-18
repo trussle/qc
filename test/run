@@ -23,6 +23,10 @@ log "✅  QC OK"
 
 assert_file_exists coverage/coverage.json
 
+# Ensure all sources are covered
+cp ../fixtures/no-tests.js ./lib/no-tests.js
+assert_fails "Covers all sources" ./node_modules/.bin/qc
+
 # Check lint of files.
 log "Linting JS files in trussle-qc"
 eslint bin/npm_test_command || fail
