@@ -1,6 +1,6 @@
 {
   "name": "@trussle/qc",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Quality control tool for Trussle",
   "bin": {
     "qc": "./bin/qc"
