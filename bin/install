@@ -17,11 +17,11 @@ log "Done!"
 
 
 log "Symlinking Git hooks to .git/hooks"
-HOOKS=.git/hooks
+HOOKS=$PACKAGE_ROOT/.git/hooks
 mkdir -p $HOOKS
 for filename in $(find $QC/hooks -type f)
 do
-  ln -s $filename $PACKAGE_ROOT/$HOOKS/$(basename $filename)
+  ln -s $filename $HOOKS/$(basename $filename)
 done
 log "Done!"
 
