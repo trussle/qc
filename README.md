@@ -39,3 +39,11 @@ If you want to run QC yourself, just run `./node_modules/.bin/qc` or set up the 
     }
 }
 ```
+
+## Assumptions
+
+> **Please read this section very carefully:** if any of these assumptions are not true about your project, QC will fail.
+
+QC assumes the following about your package:
+
+- There is a `test` script in your `package.json` which points to an executable in the `./node_modules/.bin` directory (**not** global; usually `_mocha`).

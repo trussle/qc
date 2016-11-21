@@ -14,6 +14,7 @@ rm -rf $TEST_PROJECT/node_modules $TEST_PROJECT/lib/no-tests.js $TEST_PROJECT/.g
 PACKAGE_NAME=$(npm pack)
 cd $TEST_PROJECT
 npm install --save-dev ../../$PACKAGE_NAME || fail
+npm install
 log "✅  Install OK"
 
 assert_file_exists .eslintrc.js
